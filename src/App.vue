@@ -1,13 +1,14 @@
 <template>
   <div id="app">
     <menu-nav></menu-nav>
-    <router-view></router-view>
+    <transition name="pageChange">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
 import menuNav from './components/menu.vue';
-
 
 export default {
   name: 'app',
@@ -18,17 +19,44 @@ export default {
   },
   components: {
     'menu-nav': menuNav
-  }
+  },
+	watch: {
+    '$route': function(to, from) {
+      console.log(this.$route, to, from)
+    }
+	}
 }
 </script>
 
 <style lang="scss">
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.pageChange {
+  &-enter-active, &-leave-active {
+    // transition: all 0.6s;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  &-enter-active {
+    transition: all 0.6s;
+  }
+  &-leave-active {
+    transition: all 1s;
+  }
+  &-enter {
+    transform: translateX(100%);
+  }
+  &-leave-to {
+    transform: translateX(-100%);
+  }
 }
 
 h1, h2 {

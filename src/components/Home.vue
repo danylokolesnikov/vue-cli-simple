@@ -1,5 +1,5 @@
 <template>
-	<h1>{{ message }}</h1>
+	<h1 class="home">{{ message }}</h1>
 </template>
 
 
@@ -12,3 +12,9 @@
 		}
 	}
 </script>
+
+<style lang="scss">
+	.home {
+		background: red;
+	}
+</style>
