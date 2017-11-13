@@ -9,6 +9,17 @@
 			return {
 				message: 'HOME PAGE'
 			}
+		},
+		created: function() {
+			document.addEventListener("mousemove", this.mousemove);
+		},
+		destroyed: function() {
+			document.removeEventListener("mousemove", this.mousemove);
+		},
+		methods: {
+			mousemove: function(evt) {
+				console.log("MOVVE");
+			}
 		}
 	}
 </script>

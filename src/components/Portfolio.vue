@@ -213,6 +213,6 @@
 <style scoped>
 	/*@import '../assets/desna-inner.css';*/
 	h1 {
-		background: orange
+	
 	}
 </style>

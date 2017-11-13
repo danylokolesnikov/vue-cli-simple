@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <menu-nav></menu-nav>
-    <transition name="pageChange">
+    <transition name="pageChange" mode="">
       <router-view></router-view>
     </transition>
   </div>
