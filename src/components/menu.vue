@@ -1,8 +1,9 @@
 <template>
 	<nav>
 
-		<router-link to="/">Home</router-link>
-	    <router-link to="/portfolio">Portfolio</router-link>
+		<router-link to="/" exact>Home</router-link>
+	  	<router-link to="/portfolio" exact>Portfolio</router-link>
+	  	<router-link to="/blog">Blog</router-link>
 		<!-- <a :href="item.link" v-for="item in menu">{{item.title}}</a> -->
 	</nav>
 </template>
@@ -12,7 +13,7 @@ export default {
 	name: 'menu',
 	data() {
 		return {
-			menu: [{link: '/', title: 'General'}, {link: '/case', title: 'Case'}]
+
 		}
 	}
 }
@@ -29,7 +30,7 @@ nav {
 	        align-items: flex-start;
 	-webkit-justify-content: flex-start;
 	        justify-content: flex-start;
-	
+
 	a {
 		display: inline-block;
 		padding: 10px 30px;
